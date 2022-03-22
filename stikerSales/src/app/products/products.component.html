@@ -13,6 +13,7 @@
                            <div class="p-2 col-5">
                                <div class="form group">
                                    <input type="checkbox"
+                                   (change)="checkBoxSelected($event)"
                                    formControlName="reactCheck"/>React
                                </div>
                            </div>
@@ -22,16 +23,18 @@
                            <div class="p-2 col-5">
                                <div class="form group">
                                    <input type="checkbox"
+                                   (change)="checkBoxSelected($event)"
                                    formControlName="vueCheck"/>Vue
                                </div>
                            </div>
 
                        </div>
-
+                       
                        <div class="row">
                            <div class="p-2 col-5">
                                <div class="form group">
                                    <input type="checkbox"
+                                   (change)="checkBoxSelected($event)"
                                    formControlName="angularCheck"
                                    />Angular
 
@@ -65,7 +68,7 @@
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Alguma dúvida ou recado" formControlName="observation" maxlength="50"></textarea>
                           </div>
 
-                          <div class="row">
+                          <div class="row ">
                             <div class="p-3 col-6">
                                 <button type="submit" class="btn btn-outline-info btn-sm">Enviar</button>
                             </div>
@@ -81,7 +84,7 @@
                    <div class="text-danger">Sem Produtos Ainda</div>
 
                 </div>
-                <div class="pt-5 row" *ngIf="products?.length! > 0">
+                <div class="pt-5 row " *ngIf="products?.length! > 0" >
                     <table class=" table table-striped table-hover table-sm">
                         <tr class="thead-light">
                             <th>Adesivos Específico</th>
@@ -89,7 +92,7 @@
                             <th>Vue</th>
                             <th>Angular</th>
                             <th>Quantidade</th>
-                            <th>Confirmção do Pedido</th>
+                            <th>Confirme o pedido</th>
 
                         </tr>
                         <tr *ngFor="let product of products" [class.table-danger]="product.isFinished == false">
