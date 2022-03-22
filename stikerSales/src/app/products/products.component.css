@@ -1,3 +1,14 @@
-.buttonColor{
-    background-color: rgba(164, 66, 255, 0.781);
-}
+#box{
+	/*definimos a largura do box*/
+	width:300px;
+	/* definimos a altura do box */
+	height:100px;
+	/* definimos a cor de fundo do box */
+	background-color:#6495ed;
+	/* definimos o quão arredondado irá ficar nosso box */
+	border-radius: 10px;
+	/* Declaração para aparecer no Firefox */
+	-moz-border-radius: 10px;
+	/* Para exibir nos outros navegadores como Chrome, safari, opera*/
+	-webkit-border-radius: 10px;
+	}

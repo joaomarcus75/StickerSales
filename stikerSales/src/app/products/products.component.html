@@ -1,8 +1,10 @@
-<div class="p-5">
+<div class="p-5 ">
     <div class="container shadow p-5">
-        <div class="p-5 border border-light rounded">
+        <div class="p-5 border border-light rounded border">
             <h6>Formulário para compra de Adesivos</h6>
             <hr/>
+
+           
 
             <form [formGroup]="form" (ngSubmit)="RegisterProduct()">
                 <div class="container">
@@ -13,7 +15,7 @@
                            <div class="p-2 col-5">
                                <div class="form group">
                                    <input type="checkbox"
-                                   (change)="checkBoxSelected($event)"
+                                   (change)="checkBoxReact($event)"
                                    formControlName="reactCheck"/>React
                                </div>
                            </div>
@@ -23,7 +25,7 @@
                            <div class="p-2 col-5">
                                <div class="form group">
                                    <input type="checkbox"
-                                   (change)="checkBoxSelected($event)"
+                                   (change)="checkBoxVue($event)"
                                    formControlName="vueCheck"/>Vue
                                </div>
                            </div>
@@ -34,7 +36,7 @@
                            <div class="p-2 col-5">
                                <div class="form group">
                                    <input type="checkbox"
-                                   (change)="checkBoxSelected($event)"
+                                   (change)="checkBoxAngular($event)"
                                    formControlName="angularCheck"
                                    />Angular
 
@@ -65,12 +67,12 @@
 
                          <div class="form-group">
                             <label for="exampleFormControlTextarea1">Observações:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Alguma dúvida ou recado" formControlName="observation" maxlength="50"></textarea>
+                            <textarea class="form-control" rows="3" placeholder="Alguma dúvida ou recado" formControlName="observation" maxlength="50"></textarea>
                           </div>
 
                           <div class="row ">
                             <div class="p-3 col-6">
-                                <button type="submit" class="btn btn-outline-info btn-sm">Enviar</button>
+                                <button type="submit" class="btn btn-outline-info btn-sm" >Enviar</button>
                             </div>
                         </div>
                     </div>
@@ -107,6 +109,8 @@
                             </td>
 
                         </tr>
+
+                        <button type="button" class="btn btn-sm btn-outline-info " (click)="confirmButton()"> Fazer pedido</button>
 
                     </table>
                    

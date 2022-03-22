@@ -4,6 +4,7 @@ import { Guid } from 'guid-typescript';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FormGroup,FormControl } from '@angular/forms';
 import { IfStmt, ThisReceiver } from '@angular/compiler';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -15,13 +16,20 @@ export class ProductsComponent implements OnInit {
   products!: Product[];
   form: any;
   selected:string = "X";
-  checkbox = false;
+  checkboxR = false;
+  checkboxV = false;
+  checkboxA = false;
+
+ 
+ 
+  
   
   
 
   constructor() { }
 
   ngOnInit(): void {
+
     
     this.ShoppingCart();
     this.form = new FormGroup({
@@ -31,41 +39,87 @@ export class ProductsComponent implements OnInit {
       quantity: new FormControl(),
       isFinished: new FormControl(),  
     });
-    //console.log( "valor react = " + this.form.value.reactCheck)
-    console.log(this.checkbox);
+    console.log( "valor react = " + this.form.value.reactCheck)
+  
+
   }
 
-  checkBoxSelected(event:any)
+  checkBoxReact(event:any)
   {
+    console.log("event => " + event);
+     
     if(event.checked === undefined)
     {
-      this.checkbox = true;
+      this.checkboxR = true;
+     
     }else{
-      this.checkbox = false;
+      this.checkboxR = false;
     }
-    return this.checkbox;
+    return this.checkboxR;
+   
   }
+
+  checkBoxVue(event:any)
+  {
+    console.log("event => " + event);
+     
+    if(event.checked === undefined)
+    {
+      this.checkboxV = true;
+     
+    }else{
+      this.checkboxV = false;
+    }
+    return this.checkboxV;
+   
+  }
+  
+  checkBoxAngular(event:any)
+  {
+    console.log("event => " + event);
+     
+    if(event.checked === undefined)
+    {
+      this.checkboxA = true;
+     
+    }else{
+      this.checkboxA = false;
+    }
+    return this.checkboxA;
+   
+  }
+
 
   RegisterProduct():void {
     
    
-    //marcando ou não ocheckbox o valor será sempre undefined
-    if(this.checkbox === true )
+    
+    if(this.checkboxR === true )
     {
       this.form.value.reactCheck = this.selected;
+    }
+
+    if(this.checkboxV === true )
+    {
       this.form.value.vueCheck = this.selected;
+    }
+    
+    if(this.checkboxA === true)
+    {
       this.form.value.angularCheck = this.selected;
     }
-    console.log(this.checkbox);
-    console.log("quantity" + this.form.value.quantity);
+
+    
+    
+   
    
     if(this.form.name == null)
     {
       this.form.value.purchaseId = null;
-      console.log("->>>> primeiro if " + this.form.value.purchaseId); 
+      
       if(this.form.value.name != null){
         this.form.value.purchaseId = Guid.create().toString();
-        console.log("->>>>outro if " + this.form.value.purchaseId); 
+        
       }
     
     }
@@ -73,13 +127,16 @@ export class ProductsComponent implements OnInit {
 
     
     this.form.value.isFinished = false;
-    //console.log("refresh react = " + this.form.value.reactCheck);
+    
     
 
     const product: Product = this.form.value;
     this.products.push(product);
     localStorage.setItem('DB',JSON.stringify(this.products));
-    this.form.reset();
+   
+   
+    
+    
   }
 
   ShoppingCart():void{
@@ -103,6 +160,12 @@ export class ProductsComponent implements OnInit {
       }
 
       localStorage.setItem('DB',JSON.stringify(this.products));
+
+  }
+
+  confirmButton()
+  {
+    window.location.reload();
   }
 
  

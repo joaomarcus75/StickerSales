@@ -4,6 +4,7 @@ export class Product{
     reactCheck!:string
     vueCheck!:string
     angularCheck!:string
+    testeCheck!:string
     observation!:string
     quantity!:number;
     isFinished!:boolean;
