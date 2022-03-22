@@ -62,7 +62,7 @@
 
                          <div class="form-group">
                             <label for="exampleFormControlTextarea1">Observações:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Alguma dúvida ou recado"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Alguma dúvida ou recado" formControlName="observation" maxlength="50"></textarea>
                           </div>
 
                           <div class="row">
@@ -89,7 +89,7 @@
                             <th>Vue</th>
                             <th>Angular</th>
                             <th>Quantidade</th>
-                            <th>Ações</th>
+                            <th>Confirmção do Pedido</th>
 
                         </tr>
                         <tr *ngFor="let product of products" [class.table-danger]="product.isFinished == false">
@@ -99,7 +99,7 @@
                             <td>{{product.angularCheck}}</td>
                             <td>{{product.quantity}}</td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-outline-info rounded-circle" (click)="RefreshProduct(product.productId)"></button>
+                                <button type="button" class="btn btn-sm btn-outline-info " (click)="RefreshProduct(product.purchaseId)"></button>
                                 <fa-icon [icon]="faCheckCircle"></fa-icon>
                             </td>
 
@@ -112,7 +112,7 @@
 
             </div>
 
-        </div>
+            </div>
 
     </div>
 

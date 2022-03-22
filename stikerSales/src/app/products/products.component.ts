@@ -21,8 +21,9 @@ export class ProductsComponent implements OnInit {
    
     this.ShoppingCart();
     this.form = new FormGroup({
-      productId: new FormControl(),
+      purchaseId: new FormControl(),
       name: new FormControl(),
+      observation: new FormControl(),
       quantity: new FormControl(),
       isFinished: new FormControl(),  
     });
@@ -30,7 +31,7 @@ export class ProductsComponent implements OnInit {
 
   RegisterProduct():void {
 
-    this.form.value.productId = Guid.create().toString();
+    this.form.value.purchaseId = Guid.create().toString();
     this.form.value.isFinished = false;
     this.form.value.reactCheck = "X"; 
     this.form.value.vueCheck = "X";
@@ -51,8 +52,8 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  RefreshProduct(productId: string){
-      const index: number = this.products.findIndex(p => p.productId === productId);
+  RefreshProduct(purchaseId: string){
+      const index: number = this.products.findIndex(p => p.purchaseId === purchaseId);
 
       if(this.products[index].isFinished){
         this.products[index].isFinished = false;
