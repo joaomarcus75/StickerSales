@@ -1,14 +1,18 @@
-#box{
-	/*definimos a largura do box*/
-	width:300px;
-	/* definimos a altura do box */
-	height:100px;
-	/* definimos a cor de fundo do box */
-	background-color:#6495ed;
-	/* definimos o quão arredondado irá ficar nosso box */
-	border-radius: 10px;
-	/* Declaração para aparecer no Firefox */
-	-moz-border-radius: 10px;
-	/* Para exibir nos outros navegadores como Chrome, safari, opera*/
-	-webkit-border-radius: 10px;
-	}
+  
+  .btn { 
+    background-color: #5dd8dd;
+    padding: 0.8em 1em;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+  }
+  
+  
+  
+
+  h6{
+      font-size: 300%;
+      
+  }
+
+  

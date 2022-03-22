@@ -133,7 +133,7 @@ export class ProductsComponent implements OnInit {
     const product: Product = this.form.value;
     this.products.push(product);
     localStorage.setItem('DB',JSON.stringify(this.products));
-   
+       
    
     
     
