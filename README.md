@@ -1,2 +1,0 @@
-# StickerSales
-Sticker Sales Form
